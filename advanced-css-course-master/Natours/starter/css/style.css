@@ -118,6 +118,18 @@ body {
     }
 }
 
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 .btn:link, /* about link button */
 .btn:visited {
     text-transform: uppercase;
@@ -126,6 +138,7 @@ body {
     display: inline-block;
     border-radius: 100px;
     transition: all .2s; /* make the animation more slower (button) */
+    position: relative;
 }
 
 .btn:hover /* when you pass the mouse */ {
@@ -138,7 +151,34 @@ body {
     box-shadow: 0 5px 10px rgba(0,0,0,.2); /* 0 = X, 5 = Y, 20 = blur */
 }
 
-.btn--white {
+.btn-white {
     background-color: white;
     color: #777777;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: white;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.8);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s; /* fourth arg: delay before starting */
+    animation-fill-mode: backwards; /* will display the button when the animation start*/
 }
