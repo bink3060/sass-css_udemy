@@ -1,0 +1,19 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "sass_training",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bink3060/sass-css_udemy.git"
+  },
+  "author": "bk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bink3060/sass-css_udemy/issues"
+  },
+  "homepage": "https://github.com/bink3060/sass-css_udemy#readme"
+}
