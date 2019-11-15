@@ -4,7 +4,8 @@
   "description": "sass_training",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "",
+    "compile:sass": "node-sass starter/sass/main.scss starter/css/style.css -w"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/bink3060/sass-css_udemy/issues"
   },
-  "homepage": "https://github.com/bink3060/sass-css_udemy#readme"
+  "homepage": "https://github.com/bink3060/sass-css_udemy#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
 }
