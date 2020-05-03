@@ -2,22 +2,26 @@
 
 .btn {
 
-  &:link, /* about link button */
+  &,
+  &:link,
   &:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1rem 2.5rem;
     display: inline-block;
     border-radius: 10rem;
-    transition: all .2s; /* make the animation more slower (button) */
+    transition: all .2s;
     position: relative;
     font-size: $default-font-size;
+    //change for button tags
+    border: none;
+    cursor: pointer;
   }
 
-  &:hover /* when you pass the mouse */
-  {
+  &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba($color-black, .2); /* 0 = X, 10 = Y, 20 = blur */
+    box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    /* 0 = X, 10 = Y, 20 = blur */
 
     &::after {
       transform: scaleX(1.2) scaleY(1.6);
@@ -26,10 +30,12 @@
 
   }
 
-  &:active /*  when you click */
-  {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba($color-black, .2); /* 0 = X, 5 = Y, 20 = blur */
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    /* 0 = X, 5 = Y, 20 = blur */
   }
 
 
@@ -65,13 +71,16 @@
   }
 
   &--animated {
-    animation: moveInBottom .5s ease-out .75s; /* fourth arg: delay before starting */
-    animation-fill-mode: backwards; /* will display the button when the animation start*/
+    animation: moveInBottom .5s ease-out .75s;
+    /* fourth arg: delay before starting */
+    animation-fill-mode: backwards;
+    /* will display the button when the animation start*/
   }
 
 }
 
 .btn-text {
+
   &:link,
   &:visited {
     font-size: $default-font-size;
@@ -86,12 +95,14 @@
   &:hover {
     background-color: $color-primary;
     color: $color-white;
-    box-shadow: 0 1rem 2rem rgba($color-black, .15); /*0 = X | 1 = Y | 2 = blur  rgba(color, percentage*/
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    /*0 = X | 1 = Y | 2 = blur  rgba(color, percentage*/
     transform: translateX(-2px);
   }
 
   &:active {
-    box-shadow: 0 .5rem 2rem rgba($color-black, .15); /*0 = X | 1 = Y | 2 = blur  rgba(color, percentage*/
+    box-shadow: 0 .5rem 2rem rgba($color-black, .15);
+    /*0 = X | 1 = Y | 2 = blur  rgba(color, percentage*/
     transform: translateX(0px);
   }
 }
