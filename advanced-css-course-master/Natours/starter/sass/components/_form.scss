@@ -1,6 +1,4 @@
 .form {
-
-
   &__group:not(:last-child) {
     margin-bottom: 2rem;
   }
@@ -11,16 +9,20 @@
     color: inherit;
     padding: 1.5rem 2rem;
     border-radius: 2px;
-    background-color: rgba($color-white, .5);
+    background-color: rgba($color-white, 0.5);
     border: none;
     border-bottom: 3px solid transparent;
     width: 100%;
     display: block;
-    transition-delay: all .3s;
+    transition-delay: all 0.3s;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
 
     &:focus {
       outline: none;
-      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
       border-bottom: 3px solid $color-primary;
     }
 
@@ -37,12 +39,12 @@
     font-size: 1.2rem;
     font-weight: 700;
     margin-left: 2rem;
-    margin-top: .7rem;
+    margin-top: 0.7rem;
     display: block;
-    transition: all .3s;
+    transition: all 0.3s;
   }
 
-  &__input:placeholder-shown+&__label {
+  &__input:placeholder-shown + &__label {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem);
@@ -52,6 +54,11 @@
   &__radio-group {
     width: 48%;
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__radio-input {
@@ -63,7 +70,6 @@
     cursor: pointer;
     position: relative;
     padding-left: 4.5rem;
-
   }
 
   &__radio-button {
@@ -75,7 +81,6 @@
     position: absolute;
     left: 0;
 
-
     &::after {
       content: "";
       display: block;
@@ -85,12 +90,11 @@
       background-color: $color-primary;
       @include centerItem;
       opacity: 0;
-      transition: opacity .2s;
+      transition: opacity 0.2s;
     }
   }
 
-
-  &__radio-input:checked~&__radio-label &__radio-button:after {
+  &__radio-input:checked ~ &__radio-label &__radio-button:after {
     opacity: 1;
   }
 }

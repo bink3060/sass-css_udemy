@@ -4,9 +4,10 @@
   -moz-perspective: 150rem;
   position: relative;
   height: 46rem;
+
   &__side {
     height: 46rem;
-    transition: all .8s ease;
+    transition: all 0.8s ease;
     position: absolute;
     top: 0;
     left: 0;
@@ -14,11 +15,10 @@
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, .50);
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
 
     &--front {
       background-color: $color-white;
-
     }
 
     &--back {
@@ -27,20 +27,19 @@
 
       &--1 {
         background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
-        box-shadow: 0 1.5rem 4rem rgba($color-secondary-dark, .50);
+        box-shadow: 0 1.5rem 4rem rgba($color-secondary-dark, 0.5);
       }
 
       &--2 {
         background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-        box-shadow: 0 1.5rem 4rem rgba($color-primary-dark, .50);
+        box-shadow: 0 1.5rem 4rem rgba($color-primary-dark, 0.5);
       }
 
       &--3 {
         background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
-        box-shadow: 0 1.5rem 4rem rgba($color-tertiary-dark, .50);
+        box-shadow: 0 1.5rem 4rem rgba($color-tertiary-dark, 0.5);
       }
     }
-
   }
 
   &:hover &__side--front {
@@ -62,18 +61,18 @@
     border-top-right-radius: 3px;
 
     &--1 {
-      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark,),
-      url("../../img/nat-5.jpg");
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+        url("../../img/nat-5.jpg");
     }
 
     &--2 {
-      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark,),
-      url("../../img/nat-6.jpg");
+      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
+        url("../../img/nat-6.jpg");
     }
 
     &--3 {
-      background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark,),
-      url("../../img/nat-7.jpg");
+      background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
+        url("../../img/nat-7.jpg");
     }
   }
 
@@ -95,21 +94,27 @@
     -webkit-box-decoration-break: clone;
 
     &--1 {
-      background-image: linear-gradient(to right bottom,
-              rgba($color-secondary-light, .85),
-              rgba($color-secondary-dark, .85));
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
     }
 
     &--2 {
-      background-image: linear-gradient(to right bottom,
-              rgba($color-primary-light, .85),
-              rgba($color-primary-dark, .85));
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
     }
 
     &--3 {
-      background-image: linear-gradient(to right bottom,
-              rgba($color-tertiary-light, .85),
-              rgba($color-tertiary-dark, .85));
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
     }
   }
 
@@ -157,5 +162,53 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+  }
+
+  //
+  //
+  //
+
+  @include respond(tab-port) {
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0deg);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    &__details {
+      padding: 1rem 3rem;
+    }
+
+    // FRONT SIDE STYLING
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
   }
 }
