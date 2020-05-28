@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass starter/sass/main.scss starter/css/style.css -w",
-    "devsever": "live-server",
-    "start": "npm-run-all --parrallel devserver watch:sass",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
 
     "compile:sass": "node-sass starter/sass/main.scss starter/css/style.comp.css",
     "concat:css": "concat -o starter/css/style.concat.css starter/css/icon-fonts.css starter/css/style.comp.css",
