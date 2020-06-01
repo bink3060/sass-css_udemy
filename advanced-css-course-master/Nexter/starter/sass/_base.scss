@@ -43,7 +43,7 @@ body {
         [center-end] minmax(6rem, 1fr) [full-end];
 
     & > * {
-        color: rgb(11, 144, 28);
+        color: $color-grey-dark-2;
         font-size: 3rem;
     }
 }
